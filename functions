@@ -6,6 +6,12 @@ start_extra_history() {
 
 # Function to stop extra command history logging and save the session commands
 stop_extra_history() {
+    # Check if EXTRA_HIST_START is set; if not, print an error message and exit
+    if [ -z "$EXTRA_HIST_START" ]; then
+        echo "No history recording is currently active. Start one with 'start_extra_history'."
+        return 1
+    fi
+
     local target_file=$1
 
     # If no target file is specified, prompt the user for a filename
