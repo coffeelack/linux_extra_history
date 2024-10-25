@@ -8,14 +8,21 @@ without altering the main session history.
 
 ## Setup Instructions
 
-1. **Add Functions to .bashrc**  
-   Copy the the two functions `start_extra_history` and `stop_extra_history` from the '.bashrc'-file  
-   into the '/etc/bash.bashrc` file.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/coffeelack/linux_extra_history
+   ```
 
-2. **Reload .bashrc**  
+2. **Add Functions to /etc/bash.bashrc**  
+   ```bash
+   cd linux_extra_history
+   sudo cat ./functions | sudo tee -a /etc/bash.bashrc > /dev/null
+   ```
+
+3. **Reload .bashrc**  
    Run the following command to apply changes:
    ```bash
-   source ~/.bashrc
+   source /etc/bash.bashrc
    ```
 
 ## Usage
